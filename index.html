@@ -1,0 +1,137 @@
+<div class="card" data-category="games">
+            <div class="icon">🎮</div>
+            <h2>Игровые секреты</h2>
+            <p>
+                Необычные механики, секретные места,
+                пасхалки и интересные детали в играх.
+            </p>
+            <span class="tag">ИГРЫ</span>
+        </div>
+
+        <div class="card" data-category="pc">
+            <div class="icon">💻</div>
+            <h2>Фишки Windows</h2>
+            <p>
+                Полезные функции Windows, горячие клавиши
+                и настройки, о которых многие не знают.
+            </p>
+            <span class="tag">ПК</span>
+        </div>
+
+        <div class="card" data-category="secret">
+            <div class="icon">🕵️</div>
+            <h2>Пасхалки</h2>
+            <p>
+                Спрятанные разработчиками секреты,
+                отсылки и забавные детали.
+            </p>
+            <span class="tag">СЕКРЕТЫ</span>
+        </div>
+
+        <div class="card" data-category="fun">
+            <div class="icon">😂</div>
+            <h2>Странные факты</h2>
+            <p>
+                Необычные вещи, которые звучат как шутка,
+                но действительно существуют.
+            </p>
+            <span class="tag">ПРИКОЛЫ</span>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">🧪 Лаборатория фишек</h2>
+
+    <div class="tip">
+        <b>💡 Фишка:</b>
+        Попробуй сочетание Win + Shift + S — оно позволяет быстро
+        сделать снимок выбранной области экрана в Windows.
+    </div>
+
+    <div class="tip">
+        <b>🎮 Игровая идея:</b>
+        Ищи в играх необычные места за пределами обычного маршрута.
+        Разработчики часто оставляют там маленькие секреты.
+    </div>
+
+    <div class="tip">
+        <b>⌨️ Горячая клавиша:</b>
+        Alt + Tab позволяет быстро переключаться между открытыми окнами.
+    </div>
+
+</section>
+
+<section>
+    <h2 class="section-title">🚀 Что здесь будет?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h2>Полезные гайды</h2>
+            <p>Пошаговые инструкции и простые объяснения.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👾</div>
+            <h2>Игровые фишки</h2>
+            <p>Интересные механики и секреты популярных игр.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h2>Интернет</h2>
+            <p>Необычные сайты, инструменты и интересные находки.</p>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    GLITCH LAB © 2026<br>
+    Сделано для тех, кто любит находить необычное.
+</footer>
+
+<script>
+
+function showCategory(category) {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        if (category === "all" ||
+            card.dataset.category === category ||
+            !card.dataset.category) {
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+    });
+}
+
+function searchCards() {
+    const text = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const content = card.innerText.toLowerCase();
+
+        if (content.includes(text)) {
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>
