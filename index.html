@@ -1,137 +1,137 @@
-<div class="card" data-category="games">
-            <div class="icon">🎮</div>
-            <h2>Игровые секреты</h2>
-            <p>
-                Необычные механики, секретные места,
-                пасхалки и интересные детали в играх.
-            </p>
-            <span class="tag">ИГРЫ</span>
-        </div>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Bear Bot — Рулетка</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root { --bg:#121117; --card:#25232b; --purple:#8b43e9; --purple2:#b58ae8; }
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif;overflow:hidden}
+.wrap{min-height:100vh;padding:22px 16px 28px;display:flex;flex-direction:column;align-items:center}
+h1{margin:0;font-size:31px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-1px}
+.sub{color:#a9a6ae;font-size:17px;margin-top:8px}
+.badge{margin:16px 0 8px;background:#2d2b32;border-radius:24px;padding:10px 16px;color:#eee}
+.wheelbox{position:relative;width:min(88vw,360px);height:min(88vw,360px);margin-top:5px}
+canvas{width:100%;height:100%;display:block}
+.pointer{position:absolute;right:-9px;top:50%;transform:translateY(-50%);
+width:0;height:0;border-top:25px solid transparent;border-bottom:25px solid transparent;border-right:0;border-left:50px solid #8742df;filter:drop-shadow(0 2px 2px #000)}
+.center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#ddd;border:10px solid #b7a2d9;box-shadow:0 0 0 8px #d2b9f3}
+.info{width:100%;max-width:620px;background:var(--card);border-radius:20px;padding:15px;margin-top:18px;text-align:center;color:#ddd}
+button{border:0;border-radius:16px;background:#8236e9;color:#fff;font-size:20px;font-weight:800;padding:16px 24px;width:100%;max-width:620px;margin-top:14px}
+button:disabled{opacity:.55}
+.result{font-size:23px;font-weight:900;margin-top:10px}
+.small{color:#aaa;font-size:14px;margin-top:7px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Крути колесо 🧸</h1>
+  <div class="sub">И выигрывай подарки бесплатно</div>
+  <div class="badge">Шанс <b id="chance">5%</b></div>
 
-        <div class="card" data-category="pc">
-            <div class="icon">💻</div>
-            <h2>Фишки Windows</h2>
-            <p>
-                Полезные функции Windows, горячие клавиши
-                и настройки, о которых многие не знают.
-            </p>
-            <span class="tag">ПК</span>
-        </div>
+  <div class="wheelbox">
+    <canvas id="wheel" width="720" height="720"></canvas>
+    <div class="pointer"></div>
+    <div class="center">⭐</div>
+  </div>
 
-        <div class="card" data-category="secret">
-            <div class="icon">🕵️</div>
-            <h2>Пасхалки</h2>
-            <p>
-                Спрятанные разработчиками секреты,
-                отсылки и забавные детали.
-            </p>
-            <span class="tag">СЕКРЕТЫ</span>
-        </div>
-
-        <div class="card" data-category="fun">
-            <div class="icon">😂</div>
-            <h2>Странные факты</h2>
-            <p>
-                Необычные вещи, которые звучат как шутка,
-                но действительно существуют.
-            </p>
-            <span class="tag">ПРИКОЛЫ</span>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">🧪 Лаборатория фишек</h2>
-
-    <div class="tip">
-        <b>💡 Фишка:</b>
-        Попробуй сочетание Win + Shift + S — оно позволяет быстро
-        сделать снимок выбранной области экрана в Windows.
-    </div>
-
-    <div class="tip">
-        <b>🎮 Игровая идея:</b>
-        Ищи в играх необычные места за пределами обычного маршрута.
-        Разработчики часто оставляют там маленькие секреты.
-    </div>
-
-    <div class="tip">
-        <b>⌨️ Горячая клавиша:</b>
-        Alt + Tab позволяет быстро переключаться между открытыми окнами.
-    </div>
-
-</section>
-
-<section>
-    <h2 class="section-title">🚀 Что здесь будет?</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">🧠</div>
-            <h2>Полезные гайды</h2>
-            <p>Пошаговые инструкции и простые объяснения.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">👾</div>
-            <h2>Игровые фишки</h2>
-            <p>Интересные механики и секреты популярных игр.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🌐</div>
-            <h2>Интернет</h2>
-            <p>Необычные сайты, инструменты и интересные находки.</p>
-        </div>
-
-    </div>
-</section>
-
-</main>
-
-<footer>
-    GLITCH LAB © 2026<br>
-    Сделано для тех, кто любит находить необычное.
-</footer>
+  <div class="info">
+    <div>🎁 Бесплатный прокрут</div>
+    <div class="small">Результат определяется сервером</div>
+    <div class="result" id="result"></div>
+  </div>
+  <button id="spin">Крутить сейчас</button>
+</div>
 
 <script>
+const tg = window.Telegram?.WebApp;
+tg?.ready(); tg?.expand();
 
-function showCategory(category) {
-    const cards = document.querySelectorAll(".card");
+const canvas = document.getElementById('wheel');
+const ctx = canvas.getContext('2d');
+const spinBtn = document.getElementById('spin');
+const resultEl = document.getElementById('result');
+const chanceEl = document.getElementById('chance');
+let prizes = [];
+let rotation = 0;
+let spinning = false;
 
-    cards.forEach(card => {
-        if (category === "all" ||
-            card.dataset.category === category ||
-            !card.dataset.category) {
-            card.classList.remove("hidden");
-        } else {
-            card.classList.add("hidden");
-        }
-    });
+const colors = ['#f0eafa','#d8d3e3','#eeeaf5','#d3cee0','#e6e1ee','#d1cadf','#e9e4ef'];
+
+function drawWheel(rot=0) {
+  const cx=360, cy=360, r=315;
+  ctx.clearRect(0,0,720,720);
+  const n=prizes.length || 1, step=Math.PI*2/n;
+  for(let i=0;i<n;i++){
+    const a=rot+i*step;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,a,a+step); ctx.closePath();
+    ctx.fillStyle=colors[i%colors.length]; ctx.fill();
+    ctx.strokeStyle='#b6a9ca'; ctx.lineWidth=6; ctx.stroke();
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(a+step/2);
+    ctx.fillStyle='#17151c'; ctx.font='bold 24px Arial'; ctx.textAlign='center';
+    ctx.fillText(prizes[i].name, r*0.66, 8);
+    ctx.restore();
+  }
+  ctx.beginPath(); ctx.arc(cx,cy,r+2,0,Math.PI*2);
+  ctx.strokeStyle='#b28be5'; ctx.lineWidth=28; ctx.stroke();
+}
+drawWheel();
+
+async function load() {
+  const c = await fetch('/api/config').then(r=>r.json());
+  prizes=c.prizes; drawWheel(rotation);
+}
+load();
+
+function getTelegramId() {
+  // Telegram WebApp initDataUnsafe is available inside Telegram.
+  // For local testing, ?tg_id=123 can be used.
+  const id=tg?.initDataUnsafe?.user?.id || new URLSearchParams(location.search).get('tg_id');
+  return id;
 }
 
-function searchCards() {
-    const text = document
-        .getElementById("search")
-        .value
-        .toLowerCase();
+spinBtn.onclick = async () => {
+  if(spinning) return;
+  const id=getTelegramId();
+  if(!id){ resultEl.textContent='Открой рулетку внутри Telegram'; return; }
 
-    const cards = document.querySelectorAll(".card");
+  spinning=true; spinBtn.disabled=true; resultEl.textContent='';
 
-    cards.forEach(card => {
-        const content = card.innerText.toLowerCase();
+  try {
+    const resp=await fetch('/api/spin',{method:'POST',headers:{'X-Telegram-Id':String(id)}});
+    const data=await resp.json();
+    if(!resp.ok) throw new Error(data.detail || 'Ошибка');
 
-        if (content.includes(text)) {
-            card.classList.remove("hidden");
-        } else {
-            card.classList.add("hidden");
-        }
-    });
-}
+    const idx=prizes.findIndex(p=>p.id===data.prize_id);
+    const n=prizes.length, step=Math.PI*2/n;
+    // Pointer is on the right (angle 0). Rotate chosen sector to pointer.
+    const target=-(idx*step+step/2);
+    const turns=6*Math.PI*2;
+    const start=rotation;
+    const end=turns+target;
 
+    const t0=performance.now(), dur=4200;
+    function anim(t){
+      const p=Math.min(1,(t-t0)/dur);
+      const eased=1-Math.pow(1-p,4);
+      rotation=start+(end-start)*eased;
+      drawWheel(rotation);
+      if(p<1) requestAnimationFrame(anim);
+      else {
+        rotation%=Math.PI*2;
+        resultEl.textContent='🎉 Выпало: '+data.prize;
+        chanceEl.textContent=data.chance+'%';
+        spinning=false;
+        spinBtn.disabled=true;
+      }
+    }
+    requestAnimationFrame(anim);
+  } catch(e) {
+    resultEl.textContent='⚠️ '+e.message;
+    spinning=false; spinBtn.disabled=false;
+  }
+};
 </script>
-
 </body>
 </html>
